@@ -1,0 +1,84 @@
+$deco-benefit: '/images/crypto/deco-benefit.svg';
+$deco-list: '/images/crypto/deco-list.png';
+
+.root {
+  position: relative;
+  background-color: $palette-common-black;
+}
+
+.parallax-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  @include breakpoints-down(md) {
+    background-image: url($imgAPI-crypto5);
+    background-repeat: no-repeat;
+    filter: blur(8px)
+  }
+  ::v-deep .v-parallax {
+    img {
+      filter: blur(8px)
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  padding-top: $spacing10;
+  @include breakpoints-up(lg) {
+    padding-left: $spacing8;
+    padding-right: $spacing8;
+  }
+  @include breakpoints-up(sm) {
+    padding-left: $spacing4;
+    padding-right: $spacing4;
+  }
+}
+
+.desc {
+  padding: 0;
+  color: $palette-common-white;
+  h4 {
+    font-weight: $font-medium
+  }
+}
+
+.list {
+  display: block;
+  margin: spacing(3, 0, 5);
+  list-style: none;
+  @include padding-left(0);
+  font-size: 18px;
+  @include breakpoints-down(xs) {
+    font-size: 16px;
+  }
+  li {
+    @include padding-left($spacing4);
+    line-height: 38px;
+    background: url($deco-list) no-repeat 0 10px
+  }
+}
+
+.img {
+  margin: spacing(3, 0, 0, 0);
+  overflow: hidden;
+  bottom: -40px;
+  position: relative;
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.deco {
+  position: absolute;
+  top: 40px;
+  @include right(80px);
+}
+
+.parallax-props {
+  background: url($deco-benefit) no-repeat center center;
+  height: 540px;
+}

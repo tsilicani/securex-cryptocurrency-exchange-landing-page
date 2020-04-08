@@ -1,0 +1,248 @@
+.main-feature {
+  position: relative;
+  display: block;
+  @include breakpoints-up(lg) {
+    padding-bottom: $spacing8
+  }
+}
+
+.video {
+  overflow: hidden;
+  position: relative;
+  margin: spacing(6, 0, 2);
+  figure {
+    margin: 0;
+    background: $palette-common-black;
+    img {
+      opacity: 0.62;
+      min-height: 100%;
+      width: 100%
+    }
+  }
+}
+
+.video-popup {
+  max-width: none;
+  @include breakpoints-up(sm) {
+    width: 690px;
+  }
+  ::v-deep iframe {
+    width: 100%
+  }
+}
+
+.feature-wrap {
+  position: relative
+}
+
+.play-btn {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  @include left(50%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  span {
+    &:before {
+      font-size: 130px;
+      background: linear-gradient(120deg, $palette-secondary-light, $palette-primary-light);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent
+    }
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 4px;
+  @include right(4px);
+}
+
+.deco {
+  position: absolute;
+  top: 80px;
+  @include left(80px);
+  width: 400px;
+  svg {
+    transform-origin: top left;
+  }
+}
+
+.counter {
+  display: flex;
+  @include breakpoints-up(lg) {
+    justify-content: flex-end
+  }
+  @include breakpoints-up(sm) {
+    @include padding-right($spacing8)
+  }
+  > * {
+    @include breakpoints-down(xs) {
+      width: 50%;
+      padding: spacing(0.5)
+    }
+  }
+}
+
+.lower {
+  @include breakpoints-up(sm) {
+    margin-top: $spacing20
+  }
+}
+
+.higher {
+  @include breakpoints-up(sm) {
+    margin-top: $spacing10
+  }
+}
+
+.paper {
+  position: relative;
+  height: 174px;
+  padding: $spacing2;
+  margin: spacing(1, 0);
+  @include breakpoints-up(sm) {
+    padding: spacing(1, 3);
+    margin: spacing(4, 4, 0, 0);
+    width: 174px;
+  }
+  span {
+    color: $palette-primary-main;
+    font-size: 48px;
+  }
+  h6 {
+    font-weight: $font-bold;
+  }
+  p {
+    font-size: 18px;
+    @include breakpoints-down(xs) {
+      font-size: 16px;
+    }
+  }
+}
+
+.more-feature {
+  position: relative;
+  figure {
+    margin: 0
+  }
+}
+
+.chart-deco {
+  width: 100%;
+  height: 420px;
+  bottom: 0px;
+  position: absolute;
+  background-size: cover
+}
+
+.item {
+  position: relative;
+  padding-top: $spacing10
+}
+
+.text {
+  position: relative;
+  > span {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.54);
+    top: -10px;
+    @include left(7px);
+    font-size: 38px;
+    z-index: 2;
+  }
+}
+
+.illustration {
+  img {
+    width: 80%;
+    display: block;
+    margin: 0 auto
+  }
+}
+
+.text-center {
+  span {
+    @include left(calc(50% - 7px));
+  }
+}
+
+.progress-wrap {
+  @include breakpoints-up(sm) {
+    padding: spacing(0, 6)
+  }
+  padding: 0;
+  li {
+    margin-bottom: $spacing3;
+    list-style: none;
+    @include breakpoints-up(sm) {
+      display: flex
+    }
+    h5 {
+      font-weight: $font-bold;
+      @include breakpoints-down(xs) {
+        font-size: 16px !important;
+      }
+    }
+  }
+}
+
+.coin {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  padding-top: $spacing1;
+  .logo {
+    @include margin-right($spacing2);
+    @include breakpoints-down(xs) {
+      @include margin-right($spacing1);
+      width: 20px !important;
+      height: 20px !important;
+      min-width: 0 !important;
+    }
+  }
+}
+
+.progress {
+  flex: 1;
+  @include breakpoints-up(sm) {
+    margin-top: $spacing1;
+    @include padding-left($spacing6)
+  }
+}
+
+.unit {
+  display: flex;
+  justify-content: space-between;
+  h6 {
+    @include breakpoints-down(xs) {
+      font-size: 14px !important;
+      line-height: 26px;
+    }
+    span {
+      font-size: 16px 14px !important;
+      @include breakpoints-down(xs) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.track {
+  @include use-theme(background, $light-divider, $dark-divider);
+  border-radius: 10px;
+  height: 8px !important
+}
+
+.headline {
+  .title-main {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 0.0125em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}

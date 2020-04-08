@@ -1,0 +1,65 @@
+.left {
+  @include text-align(left);
+  &:after {
+    @include left(0)
+  }
+}
+
+.right {
+  @include text-align(right);
+  &:after {
+    @include right(0)
+  }
+}
+
+.center {
+  text-align: center;
+  &:after {
+    @include left(50%);
+    @include margin-left(-35px)
+  }
+}
+
+.title-main {
+  display: block;
+  position: relative;
+  margin-bottom: $spacing3;
+  h4 {
+    margin-top: $spacing2;
+    @include palette-text-primary;
+    font-weight: $font-bold;
+    font-size: 36px;
+    font-family: "Montserrat", sans-serif !important;
+    @include breakpoints-down(md) {
+      font-size: 32px;
+      line-height: 48px
+    }
+    @include breakpoints-down(xs) {
+      font-size: 28px;
+      line-height: 44px;
+    }
+  }
+}
+
+.title-secondary {
+  display: block;
+  position: relative;
+  h4 {
+    @include palette-text-primary;
+    font-size: 36px;
+    line-height: 56px;
+    text-transform: capitalize;
+    font-weight: $font-bold;
+    @include breakpoints-down(md) {
+      font-size: 32px;
+      line-height: 48px;
+    }
+    @include breakpoints-down(xs) {
+      font-size: 28px;
+      line-height: 44px;
+    }
+  }
+  strong {
+    @include palette-text-primary
+  }
+}

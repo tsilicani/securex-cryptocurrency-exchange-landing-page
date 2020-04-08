@@ -1,0 +1,52 @@
+.testimonial {
+  position: relative
+}
+
+.caption-name {
+  margin-top: $spacing3;
+  display: block;
+  font-size: 16px;
+  @include breakpoints-down(xs) {
+    font-size: 14px;
+  }
+}
+
+.paper {
+  height: 250px;
+  margin: spacing(3, 0);
+  text-align: center;
+  border: 1px solid transparent;
+  transition: border 0.4s ease-out;
+  padding: $spacing1;
+  @include breakpoints-up(sm) {
+    padding: spacing(8, 15)
+  }
+  &.active {
+    border: 1px solid $palette-primary-main
+  }
+}
+
+.text {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 80px;
+  font-size: 18px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  @include breakpoints-down(xs) {
+    font-size: 14px;
+    -webkit-line-clamp: 4
+  }
+}
+
+.avatar {
+  @include shadow8;
+  width: 80px;
+  height: 80px;
+  margin: -32px auto 32px;
+  border-radius: 50% !important;
+  @include breakpoints-up(sm) {
+    margin: -96px auto 32px;
+  }
+}

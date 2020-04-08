@@ -1,0 +1,457 @@
+.page-wrap {
+  text-align: center;
+  background: repeat-x center 140%;
+  min-height: 100%;
+  position: relative;
+  @include palette-background-default;
+  width: 100%;
+  align-items: center;
+  padding: spacing(11, 5);
+  @include breakpoints-down(sm) {
+    padding: spacing(4, 0)
+  }
+  .title-contact {
+    font-weight: $font-bold;
+    @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+    @include breakpoints-down(xs) {
+      font-size: 32px
+    }
+  }
+  a {
+    @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+    text-transform: none;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: $font-regular;
+  }
+}
+
+.inner-wrap {
+  @include text-align(left)
+}
+
+.full-form-wrap {
+  @include palette-background-paper;
+  padding: $spacing9 0;
+}
+
+.v-card.form-box {
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.05);
+  .theme--light & {
+    background: $palette-primary-light
+  }
+  .theme--dark & {
+    @include bg-color-darken($palette-primary-dark, 0.4)
+  }
+}
+
+.desc {
+  font-size: 20px;
+  text-align: center;
+  padding: spacing(0, 10);
+  @include breakpoints-down(sm) {
+    padding: spacing(0, 5)
+  }
+  @include breakpoints-down(xs) {
+    padding: spacing(0, 2);
+    font-size: 16px;
+  }
+}
+
+.form {
+  @include text-align(left);
+  position: relative;
+  margin-top: $spacing8;
+  padding: spacing(0, 15, 10);
+  @include breakpoints-down(sm) {
+    padding: spacing(0, 6, 10)
+  }
+  @include breakpoints-down(xs) {
+    padding: spacing(0, 2, 10);
+  }
+}
+
+.form-helper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include breakpoints-down(xs) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.btn-area {
+  button {
+    margin-top: $spacing2
+  }
+  span {
+    @include breakpoints-down(xs) {
+      font-size: 14px
+    }
+    a.link {
+      display: block;
+      text-decoration: none !important;
+      @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+    }
+  }
+  &.flex {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoints-down(sm) {
+      margin-top: 0;
+      display: block
+    }
+  }
+}
+
+.right-icon {
+  @include margin-left($spacing1)
+}
+
+.check {
+  svg {
+    fill: $palette-secondary-main
+  }
+}
+
+.decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  @include left(0);
+  overflow: hidden;
+  clip: rect(0, auto, auto, 0);
+  svg {
+    fill: $palette-secondary-main;
+    opacity: 0.2;
+    position: fixed;
+    top: 0;
+  }
+}
+
+.left-deco {
+  left: -400px;
+  right: auto;
+  width: 1200px;
+  height: 1500px;
+  transform-origin: top left;
+  @include breakpoints-up(md) {
+    transform: scale(0.8)
+  }
+}
+
+.right-deco {
+  left: auto;
+  right: 0;
+  height: 1500px;
+  transform-origin: top right;
+  @include breakpoints-up(md) {
+    transform: scale(0.8)
+  }
+}
+
+.auth-frame {
+  display: block;
+  position: relative;
+  .row > div {
+    padding-top: 0;
+    padding-bottom: 0;
+    @include breakpoints-up(sm) {
+      padding: 0
+    }
+  }
+}
+
+.greeting {
+  padding: spacing(15, 6);
+  height: 100%;
+  color: $palette-common-white;
+  h6 {
+    font-weight: $font-medium
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing2;
+  text-transform: uppercase;
+  &.logo-header {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10
+  }
+  img {
+    width: 64px;
+  }
+  p, span {
+    display: block;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding-bottom: 4px;
+    margin-bottom: 0;
+    @include margin-left($spacing1);
+    color: $palette-common-white;
+    font-weight: $font-bold
+  }
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $spacing5;
+  a {
+    margin-top: $spacing2
+  }
+  @include breakpoints-down(sm) {
+    margin-top: $spacing2;
+    justify-content: center;
+    a {
+      display: none
+    }
+  }
+}
+
+.form-wrap {
+  @include palette-background-paper;
+  position: relative;
+  padding: $spacing2;
+  padding-bottom: $spacing10;
+  min-height: 760px;
+  overflow: hidden;
+  .frm-deco {
+    @include left(58.333333%);
+    transform: translateX(-72%);
+    bottom: -105px
+  }
+  @include breakpoints-up(sm) {
+    padding: $spacing5
+  }
+  @include breakpoints-up(lg) {
+    padding: $spacing8
+  }
+}
+
+.socmed-side-login {
+  display: flex;
+  justify-content: space-around;
+  @include breakpoints-down(md) {
+    justify-content: center
+  }
+  @include breakpoints-down(xs) {
+    display: block
+  }
+  > * {
+    color: $palette-common-white;
+    width: 160px;
+    padding: $spacing1;
+    @include breakpoints-down(md) {
+      margin: 0 4px;
+      width: 140px;
+    }
+    @include breakpoints-down(xs) {
+      margin: 0 0 $spacing2;
+      width: 100%
+    }
+  }
+  i {
+    color: $palette-common-white;
+    @include margin-right($spacing1)
+  }
+}
+
+.blue-btn {
+  background: #28aae1 !important;
+  &:hover {
+    background: darken(#28aae1, 20%) !important
+  }
+}
+.navi-btn {
+  background: #3b579d !important;
+  &:hover {
+    background: darken(#3b579d, 20%) !important
+  }
+}
+.red-btn {
+  background: #dd493c !important;
+  &:hover {
+    background: darken(#dd493c, 20%) !important
+  }
+}
+.separator {
+  margin: 40px auto;
+  max-width: 300px;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+  p {
+    @include breakpoints-down(xs) {
+      font-size: 12px
+    }
+  }
+  &:before, &:after {
+    content: "";
+    border-top: 1px solid;
+    @include use-theme(border-top-color, $light-text-hint, $dark-text-hint);
+    top: 50%;
+    position: absolute;
+    width: 20%
+  }
+  &:before {
+    left: 0
+  }
+  &:after {
+    right: 0
+  }
+}
+
+.form-control-label {
+  a {
+    position: relative;
+    top: -3px;
+    left: 3px;
+  }
+  > div {
+    display: inline-block;
+    margin-top: 0
+  }
+}
+
+.backtohome {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  margin-top: 20px;
+  z-index: 4;
+  border-radius: 50%;
+  &.invert {
+    i {
+      color: $palette-common-white !important
+    }
+  }
+  @include margin-left(20px);
+  @include breakpoints-down(sm) {
+    @include left(calc(50% - 40px));
+    top: 40px;
+    margin: 0
+  }
+  @include breakpoints-down('sm') {
+    display: none
+  }
+  i {
+    font-size: 32px;
+    @include palette-text-secondary
+  }
+  > span i:first-child {
+    opacity: 1;
+    transition: opacity 0.3s ease
+  }
+  > span i:last-child {
+    position: absolute;
+    @include right(0);
+    opacity: 0;
+    transition: all 0.3s ease
+  }
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+    > span i:first-child {
+      opacity: 0;
+    }
+    > span i:last-child {
+      @include right(30px);
+      opacity: 1;
+    }
+  }
+}
+
+.deco {
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  overflow: hidden;
+  @include left(-90px);
+  top: -500px;
+  transform-origin: center;
+  .v-application--is-ltr & {
+    transform: scale(1.1);
+  }
+  .v-application--is-rtl & {
+    transform: scale(-1.1, 1.1);
+  }
+  @include breakpoints-down(sm) {
+    @include left(-30px);
+  }
+  @include breakpoints-down(xs) {
+    @include left(0);
+    svg {
+      @include left(-150%);
+      position: relative
+    }
+  }
+  &.lower {
+    top: -150px;
+  }
+}
+
+.parallax {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  @include left(0);
+  top: 0
+}
+
+.parallax-left {
+  > div {
+    top: -1500px;
+    ::v-deep svg {
+      top: 1400px
+    }
+  }
+}
+
+.parallax-right {
+  > div {
+    top: -400px;
+  }
+}
+
+.deco-inner {
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  overflow: hidden;
+  top: -61px;
+  @include left(-132px);
+  transform: scale(1.1);
+  transform-origin: center;
+  @media only screen and (max-width: 1280px) {
+    @include left(-33px);
+  }
+  @include breakpoints-down(md) {
+    top: -50px;
+  }
+  @include breakpoints-down(sm) {
+    display: none
+  }
+  .deco {
+    .v-application--is-rtl & {
+      right: 60px;
+    }
+    @media only screen and (min-width: 1281px) {
+      @include left(50px)
+    }
+  }
+}
+
+.deco-sm {
+  text-align: center;
+  margin-top: $spacing10
+}

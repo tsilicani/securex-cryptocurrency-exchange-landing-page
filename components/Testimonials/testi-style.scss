@@ -1,0 +1,159 @@
+$hexa-bg: '/images/crypto/hexa-nav.png';
+
+.root {
+  position: relative;
+  @include breakpoints-down(sm) {
+    padding-bottom: $spacing20
+  }
+}
+
+.carousel {
+  position: relative;
+  @include breakpoints-up(md) {
+    padding: spacing(0, 2);
+  }
+  > div {
+    z-index: 10
+  }
+  &:after, &:before {
+    content: "";
+    border-radius: 12px;
+    @include palette-background-paper;
+    @include shadow2;
+    height: 150px;
+    position: absolute;
+  }
+  &:after {
+    width: 90%;
+    bottom: 5px;
+    @include left(50%);
+    .v-application--is-ltr & {
+      transform: translate(-50%, 0)
+    }
+    .v-application--is-rtl & {
+      transform: translate(50%, 0)
+    }
+  }
+  &:before {
+    width: 80%;
+    bottom: -15px;
+    @include left(50%);
+    .v-application--is-ltr & {
+      transform: translate(-50%, 0)
+    }
+    .v-application--is-rtl & {
+      transform: translate(50%, 0)
+    }
+  }
+  > button {
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+  }
+}
+
+.item {
+  padding: $spacing1;
+  @include breakpoints-up(md) {
+    padding: spacing(7, 1, 0)
+  }
+  &:focus {
+    outline: none
+  }
+}
+
+.slide-content {
+  animation-duration: 1s;
+  animation-fill-mode: both
+}
+
+.slide {
+  background: none
+}
+
+.nav {
+  position: absolute;
+  border: none;
+  z-index: 12;
+  top: 48%;
+  width: 50px;
+  height: 64px !important;
+  padding: 0px;
+  min-width: 0px;
+  background: url($hexa-bg) no-repeat center;
+  background-size: 80%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  .v-application--is-rtl & {
+    transform: rotate(180deg)
+  }
+  .v-application--is-ltr & {
+    transform: rotate(0deg)
+  }
+  i {
+    @include palette-text-primary;
+    opacity: 0.33;
+    position: relative;
+    font-size: 26px;
+  }
+  &:focus {
+    outline: none
+  }
+  &:hover {
+    opacity: 0.6
+  }
+}
+.prev {
+  @include left(56px);
+  svg {
+    @include right(2px);
+    margin-top: 3px;
+  }
+}
+.next {
+  @include right(56px);
+  svg {
+    @include left(2px);
+    margin-top: 3px;
+  }
+}
+
+
+.pagination {
+  z-index: 22;
+  position: relative;
+  ul {
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    bottom: $spacing12 * -1;
+    li {
+      position: relative;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin: 0 5px;
+      padding: 0;
+      border: 1px solid $palette-primary-main;
+      border-radius: 50%;
+      transition: all 0.5s ease-out;
+      &.active {
+        background: $palette-primary-main
+      }
+      &:hover {
+        opacity: 0.5
+      }
+      button {
+        opacity: 0;
+        cursor: pointer;
+        padding: 0;
+        width: 100%;
+        height: 100%
+      }
+    }
+  }
+}

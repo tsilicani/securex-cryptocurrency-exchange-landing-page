@@ -1,0 +1,129 @@
+$deco-faq-light: '/images/crypto/deco-faq-top-light.svg';
+$deco-faq-dark: '/images/crypto/deco-faq-top-dark.svg';
+
+.root {
+  position: relative;
+  @include use-theme(background-image, url($deco-faq-light), url($deco-faq-dark));
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: $spacing20 * -1;
+  .theme--light & {
+    @include bg-color-lighten($palette-primary-main, 0.84)
+  }
+  .theme--dark & {
+    background-color: $palette-primary-dark;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $dark-background-default;
+      opacity: 0.6;
+    }
+  }
+  @include breakpoints-up(xs) {
+    padding-bottom: $spacing15
+  }
+  @include breakpoints-up(md) {
+    padding: spacing(30, 0, 15)
+  }
+  @include breakpoints-down(sm) {
+    padding-bottom: $spacing10
+  }
+  ::v-deep .container {
+    position: relative;
+    z-index: 3
+  }
+}
+
+.illustration {
+  position: relative;
+  margin: spacing(6, 6, 0);
+  > div {
+    top: -240px;
+  }
+  img {
+    display: block;
+    width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.accordion {
+  position: relative;
+}
+
+.item {
+  margin-bottom: $spacing3;
+}
+
+.paper {
+  border-radius: $rounded-medium !important;
+  margin-bottom: $spacing3;
+  overflow: hidden;
+  .theme--dark & {
+    box-shadow: 0px 1px 3px 0px rgba(64, 64, 64, 1), 0px 1px 1px 0px rgba(42, 42, 42, 1), 0px 2px 1px -1px rgba(20, 20, 20, 1)
+  }
+  .theme--light & {
+    box-shadow: 0 1.5px 12px 2px rgba(0, 0, 0, 0.06)
+  }
+}
+
+.heading {
+  display: block;
+  font-weight: $font-medium;
+  padding: spacing(1, 2, 1, 0);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  @include breakpoints-down(xs) {
+    font-size: 16px;
+  }
+}
+
+.content {
+  .icon {
+    position: absolute;
+    top: 20px;
+    @include right($spacing2)
+  }
+}
+
+.expanded {
+  background: $palette-primary-main !important;
+  .heading {
+    color: $palette-common-white;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  ::v-deep .v-icon {
+    color: $palette-common-white !important;
+    transform: rotate(180deg)
+  }
+}
+
+.detail {
+  @include palette-background-paper;
+  padding-top: $spacing3;
+  border-radius: 0 0 $rounded-medium $rounded-medium;
+  span {
+    display: block;
+    font-size: 18px;
+    @include breakpoints-down(xs) {
+      font-size: 16px;
+    }
+  }
+}
+
+.parallax {
+  position: relative;
+  top: -1050px;
+  width: 100%;
+}
+
+.icon {
+  @include use-theme(color, $palette-primary-main, $palette-primary-light);
+}

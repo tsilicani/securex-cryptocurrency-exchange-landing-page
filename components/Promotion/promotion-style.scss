@@ -1,0 +1,435 @@
+$deco-bottom-light: '/images/crypto/deco-bottom-light.svg';
+$deco-bottom-dark: '/images/crypto/deco-bottom-dark.svg';
+
+.root {
+  position: relative;
+  @include use-theme(background-image, url($deco-bottom-light), url($deco-bottom-dark));
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center 101%;
+  @include breakpoints-down(sm) {
+    padding: spacing(10, 3);
+  }
+  @include breakpoints-down(xs) {
+    padding: 0
+  }
+  .theme--light & {
+    @include bg-color-lighten($palette-primary-main, 0.84)
+  }
+  .theme--dark & {
+    background-color: $palette-primary-dark;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $dark-background-default;
+      opacity: 0.6;
+    }
+  }
+  > .container {
+    position: relative;
+    height: 300px;
+    @include breakpoints-down(xs) {
+      height: 200px;
+    }
+  }
+}
+
+.slider-wrap {
+  position: relative;
+  z-index: 1;
+  > div {
+    height: 500px;
+    overflow: hidden;
+    @include breakpoints-down(sm) {
+      height: 320px;
+    }
+  }
+}
+
+.even {
+  h1 .v-btn {
+    color: $palette-secondary-main
+  }
+  .decoration {
+    svg {
+      fill: $palette-secondary-main
+    }
+  }
+}
+
+.odd {
+  h1 .v-btn {
+    color: $palette-primary-main
+  }
+  .decoration {
+    svg {
+      fill: $palette-primary-main
+    }
+  }
+}
+
+.item {
+  margin: spacing(2, 0);
+  padding: spacing(0, 1);
+  max-height: 500px;
+  z-index: 10;
+  @include breakpoints-down(xs) {
+    margin-top: $spacing8
+  }
+  svg {
+    width: 450px;
+    height: 450px
+  }
+  section {
+    position: relative;
+    z-index: 10;
+    transform: translateX(0px);
+    transition: all 0.5s ease
+  }
+  figure {
+    margin: 0;
+    line-height: 450px;
+    width: 450px;
+    height: 450px;
+    text-align: center;
+    @include left(0);
+    top: 17px;
+    position: absolute;
+    transition: none !important;
+    img {
+      transition: none;
+      vertical-align: middle;
+      width: 350px;
+      height: 393px;
+      opacity: 1;
+    }
+  }
+  .paper {
+    position: relative;
+    padding-top: 9px;
+    padding-top: 9px;
+    border-radius: 24px;
+    .v-application--is-rtl & {
+      padding: spacing(9, 16, 9, 6);
+    }
+    .v-application--is-ltr & {
+      padding: spacing(9, 6, 9, 16);
+    }
+    @include breakpoints-up(lg) {
+      @include left(-80px);
+    }
+    @include breakpoints-up(md) {
+      margin-top: 60px;
+    }
+    @include breakpoints-down(md) {
+      width: calc(100% - 80px);
+    }
+    @include breakpoints-down(sm) {
+      padding: $spacing6 !important
+    }
+    @include breakpoints-down(xs) {
+      width: 100%;
+      padding: $spacing2 !important
+    }
+    button {
+      justify-content: flex-start;
+      @include breakpoints-down(sm) {
+        justify-content: center
+      }
+    }
+  }
+  h1 {
+    font-weight: $font-bold;
+    margin-bottom: $spacing3;
+    line-height: 42px;
+    button.v-btn {
+      @include text-align(left);
+      font-size: 36px;
+      padding: 0;
+      display: block;
+      max-width: 500px;
+      text-transform: none;
+      font-family: Montserrat;
+      font-weight: $font-bold;
+      ::v-deep .v-btn__content {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @include margin-left(-4px);
+        @include breakpoints-down(xs) {
+          text-align: center;
+        }
+      }
+      @include breakpoints-down(md) {
+        width: 100%;
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center
+      }
+      @include breakpoints-down(xs) {
+        font-size: 20px;
+        line-height: 28px
+      }
+    }
+    @include breakpoints-down(xs) {
+      white-space: normal;
+      line-height: 32px
+    }
+  }
+  p {
+    margin-bottom: $spacing2;
+    @include breakpoints-down(xs) {
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+  .time {
+    h6 {
+      font-size: 14px;
+      @include palette-text-secondary;
+      @include breakpoints-down(xs) {
+        text-align: center;
+      }
+    }
+  }
+  &:before {
+    display: none
+  }
+}
+
+.prev, .next {
+  @include palette-background-paper;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+  position: absolute;
+  z-index: 11;
+  @include shadow2;
+  @include breakpoints-down(xs) {
+    display: none
+  }
+  i {
+    font-size: 35px;
+    position: absolute;
+    @include left(3px);
+    top: 3px;
+    @include use-theme(fill, $light-text-secondary, $dark-text-secondary)
+  }
+}
+
+/* Position the "next button" to the right */
+.next {
+  top: 140px;
+  @include right(120px);
+  @include breakpoints-down(md) {
+    @include right(20px)
+  }
+}
+
+.prev {
+  @include right(120px);
+  top: 200px;
+  @include breakpoints-down(md) {
+    @include right(20px)
+  }
+}
+
+.decoration {
+  position: absolute;
+  top: 0;
+  @include left(0);
+  z-index: 2;
+  opacity: 0.5
+}
+
+.img-wrap {
+  position: relative;
+  top: -24px;
+  @include left(-400px)
+}
+/* Slideshow Animtion */
+
+.slide-right-leave-active,
+.slide-right-enter-active,
+.slide-left-leave-active,
+.slide-left-enter-active {
+  transition: all 2s ease;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  overflow: hidden;
+  visibility: visible;
+  position: absolute;
+  width:100%;
+  opacity: 1;
+  /* Slide Out delay */
+  h1 {
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+  }
+  p {
+    -webkit-transition-delay: 1.1s;
+    transition-delay: 1.1s;
+  }
+  button {
+    -webkit-transition-delay: 1.3s;
+    transition-delay: 1.3s;
+  }
+  section {
+    transform: translateX(40px);
+    opacity: 0
+  }
+  section img {
+    -webkit-transition-delay: 1.3s;
+    transition-delay: 1.3s;
+  }
+  section span {
+   -webkit-transition-delay: 1.4s;
+    transition-delay: 1.4s;
+  }
+  span strong {
+   -webkit-transition-delay: 1.5s;
+    transition-delay: 1.5s;
+  }
+}
+
+/* Slide Out delay */
+.slide-right-leave-to,
+.slide-left-leave-to {
+  h1 {
+    -webkit-transition-delay: .3s;
+    transition-delay: .3s;
+  }
+  p {
+	-webkit-transition-delay: .2s;
+    transition-delay: .2s;
+  }
+  button {
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+  section img, section * {
+	-webkit-transition-delay: 1.3s;
+    transition-delay: 1.3s;
+  }
+  section span {
+	-webkit-transition-delay: .1s;
+    transition-delay: .1s;
+  }
+  section span strong {
+	-webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+}
+
+.slide-right-enter {
+  transform: translate(100%, 0);
+}
+.slide-left-leave-to {
+  transform: translate(100%, 0);
+}
+.slide-right-leave-to {
+  transform: translate(-100%, 0);
+}
+.slide-left-enter {
+  transform: translate(-100%, 0);
+}
+
+.slide-left-enter,
+.slide-right-leave-to {
+  h1 {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  button {
+	-webkit-transform: translateY(20px);
+    transform: translateY(20px);
+	opacity: 0;
+  }
+  p {
+	-webkit-transform: translateY(20px);
+    transform: translateY(20px);
+	opacity: 0;
+  }
+  section {
+    opacity: 0;
+    img, > * {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+    span {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+      opacity: 0;
+      strong {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.slide-right-enter,
+.slide-left-leave-to{
+  h1 {
+    transition: all 0.3s ease;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  button {
+	transition: all 0.3s ease;
+	-webkit-transform: translateY(20px);
+    transform: translateY(20px);
+	opacity: 0;
+  }
+  p {
+	transition: all 0.3s ease;
+	-webkit-transform: translateY(20px);
+    transform: translateY(20px);
+	opacity: 0;
+  }
+  section {
+    * {
+      transition: all 0.3s ease;
+    }
+    figure {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    img {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+    span {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+      opacity: 0;
+      strong {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.swipper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include breakpoints-up(md) {
+    display: none
+  }
+}

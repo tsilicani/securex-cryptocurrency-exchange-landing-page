@@ -1,0 +1,66 @@
+$error-deco: '/images/crypto/error-deco.png';
+
+.error-wrap {
+  width: 100%;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing15 * -1;
+  @include breakpoints-down(xs) {
+    padding-top: $spacing20;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: center
+}
+
+.deco {
+  position: relative;
+  svg {
+    fill: $palette-primary-light;
+    position: relative;
+    width: 212px;
+    height: 240px;
+  }
+  h3 {
+    color: $palette-primary-dark;
+    font-size: 96px;
+    text-transform: capitalize;
+    font-weight: 700;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50px;
+    @include left(0)
+  }
+  &:before {
+    content: "";
+    width: 320px;
+    height: 230px;
+    position: absolute;
+    top: $spacing3 * 1;
+    @include left($spacing5 * -5)
+  }
+}
+
+.text {
+  @include breakpoints-up(sm) {
+    @include padding-left($spacing5);
+    @include border-left(1px solid);
+    @include use-theme(border-color, $light-divider, $dark-divider)
+  }
+  @include breakpoints-down(xs) {
+    text-align: center;
+    margin: spacing(5, 0, 20);
+  }
+  h4 {
+    font-weight: $font-bold;
+    margin-bottom: $spacing4
+  }
+}
+.button {
+  margin-top: $spacing4
+}
