@@ -23,14 +23,14 @@ module.exports = {
       // PWA primary color
       { name: 'theme-color', content: theme.primary },
       // Facebook
-      { property: 'author', content: 'luxi' },
-      { property: 'og:site_name', content: 'luxi.ux-maestro.com' },
+      { property: 'author', content: 'tobias' },
+      { property: 'og:site_name', content: 'securex.com' },
       { property: 'og:locale', content: 'en_US' },
       { property: 'og:type', content: 'website' },
       // Twitter
-      { property: 'twitter:site', content: 'luxi.ux-maestro.com' },
-      { property: 'twitter:domain', content: 'luxi.ux-maestro.com' },
-      { property: 'twitter:creator', content: 'luxi' },
+      { property: 'twitter:site', content: 'securex.com' },
+      { property: 'twitter:domain', content: 'securex.com' },
+      { property: 'twitter:creator', content: 'tobias' },
       { property: 'twitter:card', content: 'summary' },
       { property: 'twitter:image:src', content: '/images/logo.png' },
       { property: 'og:url', content: brand.crypto.url },
