@@ -7,8 +7,8 @@ import brand from './static/text/brand'
 module.exports = {
   mode: 'spa',
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     htmlAttrs: {
       dir: 'ltr'
@@ -21,7 +21,7 @@ module.exports = {
       { name: 'msapplication-TileColor', content: '#FFFFFF' },
       { name: 'msapplication-TileImage', content: '/favicons/ms-icon-144x144.png' },
       // PWA primary color
-      { name: 'theme-color', content: theme.primary},
+      { name: 'theme-color', content: theme.primary },
       // Facebook
       { property: 'author', content: 'luxi' },
       { property: 'og:site_name', content: 'luxi.ux-maestro.com' },
@@ -67,12 +67,12 @@ module.exports = {
     ]
   },
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: theme.primary },
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: [
     '~/assets/transition.scss',
     '~/assets/vuetify-overide.scss',
@@ -83,8 +83,8 @@ module.exports = {
     '~/assets/vendors/slick-carousel/slick-theme.css'
   ],
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: [
     '~/plugins/vue-fragment-config',
     '~/plugins/vue-wow-config',
@@ -96,14 +96,14 @@ module.exports = {
     { src: '~/plugins/vue-touch-config', ssr: false }
   ],
   /*
-  ** Nuxt.js dev-modules
-  */
+   ** Nuxt.js dev-modules
+   */
   buildModules: [
     '@nuxtjs/vuetify',
   ],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     ['@nuxtjs/html-minifier', { log: 'once', logHtml: true }],
     [
@@ -147,24 +147,24 @@ module.exports = {
     ]
   ],
   /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
+   ** vuetify module configuration
+   ** https://github.com/nuxt-community/vuetify-module
+   */
   vuetify: {
     customVariables: ['~/assets/styles.scss'],
     optionsPath: './config/vuetify.options.js'
   },
   /*
-  ** Render configuration
-  */
+   ** Render configuration
+   */
   render: {
     bundleRenderer: {
       directives: {
         shouldPreload: (file, type) => {
           return ['script', 'style', 'font'].includes(type)
         },
-        scroll: function (el, binding) {
-          let f = function (evt) {
+        scroll: function(el, binding) {
+          let f = function(evt) {
             if (binding.value(evt, el)) {
               window.removeEventListener('scroll', f)
             }
@@ -175,13 +175,13 @@ module.exports = {
     }
   },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {
       config.plugins.push(
         new FilterWarningsPlugin({
           exclude: /Critical dependency: the request of a dependency is an expression/
@@ -201,12 +201,12 @@ module.exports = {
     }
   },
   /*
-  ** Page Layout transition
-  */
+   ** Page Layout transition
+   */
   layoutTransition: {
     name: 'layout',
     mode: 'out-in',
-    beforeEnter (el) {
+    beforeEnter(el) {
       console.log('Before enter...');
     },
     afterLeave(el) {
@@ -214,8 +214,8 @@ module.exports = {
     }
   },
   /*
-  ** Application Port
-  */
+   ** Application Port
+   */
   server: {
     port: 8003, // default: 3000
   }

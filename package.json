@@ -18,7 +18,8 @@
     "heroku-postbuild": "npm run build",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "push": "git add . && git commit -m \"Changes\" && git push"
+    "push": "git add . && git commit -m \"Changes\" && git push",
+    "deploy-dev": "npm run push; npm run build; sls deploy; aws cloudfront create-invalidation --distribution-id E3FKNSM5KOHOLV --paths \"/*\""
   },
   "dependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
