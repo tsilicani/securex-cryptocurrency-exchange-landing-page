@@ -10,7 +10,7 @@
   </a>
 </p>
 
-<p>A Cryptocurrency exchange landing page made with Vue.js and Nuxt.js.</p>
+<p>A cryptocurrency exchange landing page made with Vue.js and Nuxt.js.</p>
 
 [**Demo**](https://d3yke2nhq6cm6.cloudfront.net/)<br>
 
