@@ -1,12 +1,12 @@
 <h1>Securex</h1>
 <p>
   <a href="https://d3yke2nhq6cm6.cloudfront.net" target="_blank">
-    <img alt="screenshot" width="300" src="https://d3yke2nhq6cm6.cloudfront.net/img/logo-title.png">
+    <img alt="screenshot" width="300" src="https://d3yke2nhq6cm6.cloudfront.net/images/crypto/logo-title.png">
   </a>
 </p>
 <p>
   <a href="https://d3yke2nhq6cm6.cloudfront.net" target="_blank">
-    <img alt="screenshot" width="300" src="https://d3yke2nhq6cm6.cloudfront.net/img/home-page.png">
+    <img alt="screenshot" width="300" src="https://d3yke2nhq6cm6.cloudfront.net/images/crypto/home-page.png">
   </a>
 </p>
 
