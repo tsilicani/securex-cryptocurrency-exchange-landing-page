@@ -5,7 +5,7 @@ import languages from './static/lang/languages'
 import brand from './static/text/brand'
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
