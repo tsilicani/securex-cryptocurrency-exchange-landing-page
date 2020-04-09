@@ -43,16 +43,16 @@
         <v-col md="3" cols="12" class="py-md-0 px-8 py-6">
           <div class="socmed">
             <v-btn text icon class="button">
-              <span class="ion-social-twitter icon" />
+              <v-icon color="white">mdi-twitter</v-icon>
             </v-btn>
             <v-btn text icon class="button">
-              <span class="ion-social-facebook icon" />
+              <v-icon color="white">mdi-facebook</v-icon>
             </v-btn>
             <v-btn text icon class="button">
-              <span class="ion-social-instagram icon" />
+              <v-icon color="white">mdi-instagram</v-icon>
             </v-btn>
             <v-btn text icon class="button">
-              <span class="ion-social-linkedin icon" />
+              <v-icon color="white">mdi-linkedin</v-icon>
             </v-btn>
           </div>
           <!-- <v-select :items="langList" :value="lang" v-model="lang" label="" outlined class="select-lang" prepend-inner-icon="mdi-web" @change="switchLang(lang)" />
