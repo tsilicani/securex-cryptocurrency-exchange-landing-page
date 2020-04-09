@@ -7,7 +7,7 @@ const brand = {
     logoText: 'Securex Platform',
     projectName: 'Securex',
     img: '/static/images/crypto-logo.png',
-    notifMsg: 'By clicking ‘accept,’ you consent to the processing of your data by us.'
+    notifMsg: 'By clicking "accept", you consent to the processing of your data by us.'
   }
 }
 
