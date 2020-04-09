@@ -7,10 +7,7 @@
       <v-row class="spacing6">
         <v-col md="6" class="pa-6">
           <title-main :text="$t('cryptoLanding.faq_title')" :align="isMobile ? 'center' : 'left'" />
-          <p
-            class="use-text-subtitle2"
-            :class="[isMobile ? 'text-center' : 'text-left']"
-          >
+          <p class="use-text-subtitle2" :class="[isMobile ? 'text-center' : 'text-left']">
             {{ $t('cryptoLanding.faq_subtitle') }}
           </p>
           <hidden point="smDown">
@@ -21,16 +18,9 @@
         </v-col>
         <v-col md="6" cols="12" class="pa-6">
           <div class="accordion">
-            <v-expansion-panels
-              v-model="panel"
-              active-class="expanded"
-            >
-              <v-expansion-panel
-                v-for="(item, index) in faqData"
-                :key="index"
-                class="paper"
-              >
-                 <v-expansion-panel-header class="content">
+            <v-expansion-panels v-model="panel" active-class="expanded">
+              <v-expansion-panel v-for="(item, index) in faqData" :key="index" class="paper">
+                <v-expansion-panel-header class="content">
                   <span class="heading">
                     {{ item.q }}
                   </span>
@@ -48,41 +38,34 @@
     </v-container>
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import 'faq-style.scss';
-</style>
 
+</style>
 <script>
 import Hidden from '../Hidden'
 import Hexagonal from '../Parallax/Hexagonal'
 import Title from '../Title'
 
-const faqData = [
-  {
-    q: 'Pellentesque ac bibendum tortor?',
-    a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor.'
+const faqData = [{
+    q: 'Is Securex a decentralized platform?',
+    a: 'Yes, Securex is a blockchain-based echange.'
   },
   {
-    q: 'In mi nulla, fringilla vestibulum?',
-    a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: 'Can i trade Monero here?',
+    a: 'Yes Monero is listed here. '
   },
   {
-    q: 'Quisque lacinia purus ut libero?',
-    a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: 'The withdrawals are free of charge?',
+    a: 'Yes there are no costs. '
   },
   {
-    q: 'Quisque ut metus sit amet augue?',
-    a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: 'Can i deposit fiat currencies here?',
+    a: 'Yes you can deposit USD EUR and AUD.'
   },
   {
-    q: 'Pellentesque ac bibendum tortor?',
-    a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: 'There are cold wallets here?',
+    a: 'Yes you can deposit your currencies in various type of cold wallets. '
   }
 ]
 
@@ -105,4 +88,5 @@ export default {
     }
   }
 }
+
 </script>

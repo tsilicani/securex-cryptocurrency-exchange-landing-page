@@ -29,9 +29,9 @@ const imgAPI = {
     'https://via.placeholder.com/640x425/c4cdff/757575'
   ],
   crypto: [
-    '/images/crypto/promo4_iq6pj5.png',
+    '/images/crypto/promo2.png',
+    '/images/crypto/promo.png',
     '/images/crypto/bullish.jpg',
-    '/images/crypto/600x341.png',
     '/images/crypto/chart.jpg',
     '/images/crypto/news.jpg',
     '/images/crypto/parallax_r8cohw.jpg',

@@ -88,7 +88,7 @@ export default {
     news: [{
         type: 'news',
         text: 'The bullish market is coming.',
-        img: img.crypto[1]
+        img: img.crypto[2]
       },
       {
         type: 'news',
